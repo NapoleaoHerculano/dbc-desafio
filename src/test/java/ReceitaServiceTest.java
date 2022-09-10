@@ -27,4 +27,28 @@ public class ReceitaServiceTest {
         Assertions.assertFalse(retorno);
     }
 
+    @Test
+    void deveRetornarVerdadeiroSeQuantidadeDeCaracteresDaContaForIgualASeis() throws InterruptedException {
+        ReceitaService receitaService = new ReceitaService();
+        boolean retorno = receitaService.atualizarConta("1111","123456", 200.0, "A");
+
+        Assertions.assertTrue(retorno);
+    }
+
+    @Test
+    void deveRetornarFalsoSeQuantidadeDeCaracteresDaContaForDiferenteDeSeis() throws InterruptedException {
+        ReceitaService receitaService = new ReceitaService();
+        boolean retorno = receitaService.atualizarConta("1111","1234567", 200.0, "A");
+
+        Assertions.assertFalse(retorno);
+    }
+
+    @Test
+    void deveRetornarFalsoSeAtributoContaForNulo() throws InterruptedException {
+        ReceitaService receitaService = new ReceitaService();
+        boolean retorno = receitaService.atualizarConta("1111",null, 200.0, "A");
+
+        Assertions.assertFalse(retorno);
+    }
+
 }
