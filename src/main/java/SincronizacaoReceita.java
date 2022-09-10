@@ -28,9 +28,14 @@ agencia;conta;saldo;status
 
 */
 
+import java.io.IOException;
+
 public class SincronizacaoReceita {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
+
+        ReceitaService receitaService = new ReceitaService();
+        receitaService.importarArquivoSicredi();
         
         // Exemplo como chamar o "serviço" do Banco Central.
         // ReceitaService receitaService = new ReceitaService();
