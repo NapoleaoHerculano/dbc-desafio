@@ -92,11 +92,17 @@ public class ReceitaService {
             String conta = scannerLeitura.next().replace("-", "");
             double saldo = scannerLeitura.nextDouble();
             String status = scannerLeitura.next();
-            boolean retorno = atualizarConta(agencia, conta, saldo, status);
+            boolean retorno;
+
+            try {
+                retorno = atualizarConta(agencia, conta, saldo, status);
+            }catch (RuntimeException exception){
+                retorno = false;
+            }
 
             scannerLeitura.close();
 
-            bufferedWriter.write(formatarLinhaParaCsv(formatarConta(conta), agencia, saldo, status, retorno));
+            bufferedWriter.write(formatarLinhaParaCsv(formatarConta(conta), agencia, saldo, status, formatarProcessamento(retorno)));
             bufferedWriter.newLine();
         }
 
@@ -135,8 +141,22 @@ public class ReceitaService {
      *
      * @return string com os dados lidos e formatados no padrão estipulado.
      */
-    private String formatarLinhaParaCsv(String conta, String agencia, double saldo, String status, boolean retornoProcessamento){
+    private String formatarLinhaParaCsv(String conta, String agencia, double saldo, String status, String retornoProcessamento){
         return String.format(Locale.GERMANY,"%s;%s;%.2f;%s;%s", agencia, conta, saldo, status, retornoProcessamento);
+    }
+
+    /**
+     * Função para tratar o retorno do processamento.
+     * @param status booleano com o retorno do processamento.
+     * @return string referente ao status do processamento.
+     */
+    private String formatarProcessamento(boolean status){
+
+        if (status){
+            return "processado";
+        }
+
+        return "erro";
     }
 
 }
