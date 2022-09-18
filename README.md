@@ -18,12 +18,14 @@ Após baixar o projeto, você precisa fazer a compilação do arquivo **Sincroni
 
 Após a compilação, a pasta do projeto deve estar semelhante a imagem seguinte:
 
-![posCompilacao](https://user-images.githubusercontent.com/33008128/189494632-9f39aa38-7fa4-4fa2-9a11-d933b5d8e37c.png)
+![poscompilacao](https://user-images.githubusercontent.com/33008128/190902405-c2e3fddb-7aa0-49ad-a1ee-6bb8e16ce91f.png)
+
 
 
 Após a compilação você precisa precisa inserir o arquivo CSV na pasta que você compilou o projeto:
 
-![importArquivo](https://user-images.githubusercontent.com/33008128/189493543-146e8cd3-866d-4dd7-826b-01429764a95d.png)
+![importarquivo](https://user-images.githubusercontent.com/33008128/190902557-7b7797b6-ca78-4d4e-87ed-343179b267f6.png)
+
 
 Feito isso, basta executar o comando necessário para executar o projeto, conforme exemplo abaixo (OS Windows - CMD):
 
@@ -33,7 +35,8 @@ Ao fim da execução, um novo arquivo chamado **saida-processamento** estará di
 
 Exemplo da pasta após o processamento:
 
-![image](https://user-images.githubusercontent.com/33008128/189494357-acc4a59c-f1ab-42b7-ae1e-fa57527c4a6a.png)
+![posprocessamento](https://user-images.githubusercontent.com/33008128/190902823-db593a28-6ec0-473c-915e-9069ce61c368.png)
+
 
 Exemplo do CSV gerado após processamento - [saida-processamento.csv](https://github.com/NapoleaoHerculano/dbc-desafio/files/9541017/saida-processamento.csv)
 
